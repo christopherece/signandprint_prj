@@ -8,7 +8,7 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Signage</h1>
+              <h1>Services</h1>
               <p class="mb-0">
                 Bring your workplace vision to life with custom signage that reflects your brand identity. We design, manufacture, and install interior and exterior signs, helping your business stand out. From small decals to large billboards, we offer tailored solutions for individuals, retail, and corporate clients. Our full-service approach ensures high-quality results with exceptional customer service, flexibility, competitive pricing, and fast turnaround times.
             </p>
@@ -19,8 +19,8 @@
       <nav class="breadcrumbs">
         <div class="container">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Starter Page</li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li class="current">Services</li>
           </ol>
         </div>
       </nav>
@@ -40,64 +40,64 @@
         <div class="row">
           <div class="col-md-3 mb-4">
             <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="sign1.jpg" class="card-img-top" alt="Custom Sign 1">
+              <img src="{% static 'img/sign1.jpg' %}" class="card-img-top" alt="Custom Sign 1">
               <div class="card-body">
                 <h5 class="card-title">Signage</h5>
                   <ul class="card-list">
-                    <li><a href="#acm-signs">ACM Signs</a></li>
-                    <li><a href="#pvc-foamboard-signs">PVC Foamboard Signs</a></li>
-                    <li><a href="#corflute-signs">Corflute Signs</a></li>
-                    <li><a href="#vinyl-signs">Vinyl Signs</a></li>
-                    <li><a href="#wayfinding-signs">Wayfinding Signs</a></li>
-                    <li><a href="#3d-signs">3D Signs</a></li>
-                    <li><a href="#illuminated-signs">Illuminated Signs</a></li>
-                    <li><a href="#window-frosting-signage">Window Frosting Signage</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">ACM Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">PVC Foamboard Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Corflute Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Vinyl Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Wayfinding Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">3D Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Illuminated Signs</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Window Frosting Signage</a></li>
                   </ul>
               </div>
             </div>
           </div>
           <div class="col-md-3 mb-4">
             <div class="card h-100"> <!-- Added h-100 class -->
-              <!-- <img src="sign2.jpg" class="card-img-top" alt="Custom Sign 2"> -->
+              <img src="{% static 'img/sign2.jpg' %}" class="card-img-top" alt="Custom Sign 1">
               <div class="card-body">
                 <h5 class="card-title">Display Signs</h5>
                   <ul class="card-list">
-                    <li><a href="#acm-signs">PVC Banner</a></li>
-                    <li><a href="#pvc-foamboard-signs">Roll Up Banner</a></li>
-                    <li><a href="#corflute-signs">Footpath Sign</a></li>
-                    <li><a href="#vinyl-signs">A-Frame</a></li>
-                    <li><a href="#wayfinding-signs">Custom Flags</a></li>
-                    <li><a href="#3d-signs">Mexh Banner</a></li>
-                    <li><a href="#illuminated-signs">Pop Up Gazebo/Marquues</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">PVC Banner</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Roll Up Banner</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Footpath Sign</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">A-Frame</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Custom Flags</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Mexh Banner</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Pop Up Gazebo/Marquues</a></li>
                   </ul>
               </div>
             </div>
           </div>
           <div class="col-md-3 mb-4">
             <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="sign3.jpg" class="card-img-top" alt="Custom Sign 3">
+              <img src="{% static 'img/sign3.jpg' %}" class="card-img-top" alt="Custom Sign 1">
               <div class="card-body">
                 <h5 class="card-title">Digital Printing</h5>
                   <ul class="card-list">
-                    <li><a href="#acm-signs">Business Card</a></li>
-                    <li><a href="#pvc-foamboard-signs">Roll Up Banner</a></li>
-                    <li><a href="#corflute-signs">Flyer</a></li>
-                    <li><a href="#vinyl-signs">Brochure</a></li>
-                    <li><a href="#wayfinding-signs">Custom Stickers / Labels</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Business Card</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Roll Up Banner</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Flyer</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Brochure</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Custom Stickers / Labels</a></li>
                   </ul>
               </div>
             </div>
           </div>
           <div class="col-md-3 mb-4">
             <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="sign4.jpg" class="card-img-top" alt="Custom Sign 4">
+              <img src="{% static 'img/sign4.jpg' %}" class="card-img-top" alt="Custom Sign 1">
               <div class="card-body">
                 <h5 class="card-title">Vehicle Signs</h5>
                   <ul class="card-list">
-                    <li><a href="#acm-signs">Car Magnets</a></li>
-                    <li><a href="#pvc-foamboard-signs">Car Signage</a></li>
-                    <li><a href="#corflute-signs">Oneway Graphic</a></li>
-                    <li><a href="#vinyl-signs">Truck Signage</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Car Magnets</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Car Signage</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Oneway Graphic</a></li>
+                    <li><a href="{% url 'service' service_id=1 %}">Truck Signage</a></li>
                   </ul>
               </div>
             </div>

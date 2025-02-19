@@ -4,5 +4,5 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'services/services.html')
 
-def service(request):
+def service(request, service_id):
     return render(request, 'services/service.html')
