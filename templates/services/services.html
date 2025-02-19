@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Signage</h1>
+              <p class="mb-0">
+                Bring your workplace vision to life with custom signage that reflects your brand identity. We design, manufacture, and install interior and exterior signs, helping your business stand out. From small decals to large billboards, we offer tailored solutions for individuals, retail, and corporate clients. Our full-service approach ensures high-quality results with exceptional customer service, flexibility, competitive pricing, and fast turnaround times.
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Starter Page</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Services Offered</h2>
+        <p><strong>Our Process:</strong> Concept > Design > Manufacture > Installation</p>
+        <p>Talk to us today to bring your signage ideas to life!</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-3 mb-4">
+            <div class="card h-100"> <!-- Added h-100 class -->
+              <img src="sign1.jpg" class="card-img-top" alt="Custom Sign 1">
+              <div class="card-body">
+                <h5 class="card-title">Signage</h5>
+                  <ul class="card-list">
+                    <li><a href="#acm-signs">ACM Signs</a></li>
+                    <li><a href="#pvc-foamboard-signs">PVC Foamboard Signs</a></li>
+                    <li><a href="#corflute-signs">Corflute Signs</a></li>
+                    <li><a href="#vinyl-signs">Vinyl Signs</a></li>
+                    <li><a href="#wayfinding-signs">Wayfinding Signs</a></li>
+                    <li><a href="#3d-signs">3D Signs</a></li>
+                    <li><a href="#illuminated-signs">Illuminated Signs</a></li>
+                    <li><a href="#window-frosting-signage">Window Frosting Signage</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100"> <!-- Added h-100 class -->
+              <!-- <img src="sign2.jpg" class="card-img-top" alt="Custom Sign 2"> -->
+              <div class="card-body">
+                <h5 class="card-title">Display Signs</h5>
+                  <ul class="card-list">
+                    <li><a href="#acm-signs">PVC Banner</a></li>
+                    <li><a href="#pvc-foamboard-signs">Roll Up Banner</a></li>
+                    <li><a href="#corflute-signs">Footpath Sign</a></li>
+                    <li><a href="#vinyl-signs">A-Frame</a></li>
+                    <li><a href="#wayfinding-signs">Custom Flags</a></li>
+                    <li><a href="#3d-signs">Mexh Banner</a></li>
+                    <li><a href="#illuminated-signs">Pop Up Gazebo/Marquues</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100"> <!-- Added h-100 class -->
+              <img src="sign3.jpg" class="card-img-top" alt="Custom Sign 3">
+              <div class="card-body">
+                <h5 class="card-title">Digital Printing</h5>
+                  <ul class="card-list">
+                    <li><a href="#acm-signs">Business Card</a></li>
+                    <li><a href="#pvc-foamboard-signs">Roll Up Banner</a></li>
+                    <li><a href="#corflute-signs">Flyer</a></li>
+                    <li><a href="#vinyl-signs">Brochure</a></li>
+                    <li><a href="#wayfinding-signs">Custom Stickers / Labels</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-4">
+            <div class="card h-100"> <!-- Added h-100 class -->
+              <img src="sign4.jpg" class="card-img-top" alt="Custom Sign 4">
+              <div class="card-body">
+                <h5 class="card-title">Vehicle Signs</h5>
+                  <ul class="card-list">
+                    <li><a href="#acm-signs">Car Magnets</a></li>
+                    <li><a href="#pvc-foamboard-signs">Car Signage</a></li>
+                    <li><a href="#corflute-signs">Oneway Graphic</a></li>
+                    <li><a href="#vinyl-signs">Truck Signage</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Starter Section Section -->
+{% endblock %}
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards stretch to the same height */
+  }
+
+  .card-body {
+    flex-grow: 1; /* Allow card body to grow and fill remaining space */
+  }
+
+  .card-list {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0; /* Remove default padding */
+  }
+
+  .card-list li {
+    padding: 8px 0; /* Add spacing between list items */
+    border-bottom: 1px solid #eee; /* Add a subtle border between items */
+    font-size: 14px; /* Adjust font size */
+    color: #555; /* Adjust text color */
+  }
+
+  .card-list li:last-child {
+    border-bottom: none; /* Remove border from the last item */
+  }
+
+  .card-list li::before {
+    content: "✔"; /* Add a checkmark before each item */
+    color: #28a745; /* Green color for the checkmark */
+    margin-right: 10px; /* Space between checkmark and text */
+  }
+
+  .card-list li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Default link color */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  .card-list li a:hover {
+    color: #007bff; /* Change link color on hover */
+  }
+</style>
