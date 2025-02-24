@@ -29,32 +29,32 @@
     <!-- Starter Section Section -->
     <section id="starter-section" class="starter-section section">
         <div class="container">
-            <a href="" class="btn btn-light mb-4" style="background-color: teal; color: white;">Back To Service</a>
+            <a href="{% url 'index' %}" class="btn btn-light mb-4" style="background-color: teal; color: white;">Back To Service</a>
             <div class="row">
                 <!-- Left Content (Images, Fields, and Thumbnails) -->
                 <div class="col-md-8">
-                    <!-- Home Main Image -->
-                    <img src="{% static 'img/birthday.jpg' %}" alt="" class="img-main img-fluid mb-3">
-                    
+                    <!-- Service Main Image -->
+                    <img src="{{ service.image.url }}" alt="{{ service.name }}" class="img-main img-fluid mb-3">
+    
                     <!-- Thumbnails -->
                     <div class="row mb-5 thumbs">
-                        {% for i in 1..6 %}
+                        {% for image in service.gallery.all %}
                         <div class="col-md-2">
-                            <a href="assets/img/homes/home-inside-{{ i }}.jpg" data-lightbox="home-images">
-                                <img src="assets/img/homes/home-inside-{{ i }}.jpg" alt="" class="img-fluid">
+                            <a href="{{ image.url }}" data-lightbox="service-images">
+                                <img src="{{ image.url }}" alt="" class="img-fluid">
                             </a>
                         </div>
                         {% endfor %}
                     </div>
-                    
+    
                     <!-- Fields -->
                     <div class="row mb-5 fields">
-                        <h2>Signage</h2>
+                        <h2>{{ service.name }}</h2>
                         <div class="col-md-6">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-secondary">
                                     <i class="fas fa-money-bill-alt"></i> Price:
-                                    <span class="float-right">$55 - $100</span>
+                                    <span class="float-right">${{ service.price_min }} - ${{ service.price_max }}</span>
                                 </li>
                                 <li class="list-group-item text-secondary">
                                     <i class="fas fa-bath"></i> Eyelet:
@@ -71,44 +71,25 @@
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item text-secondary">
                                     <i class="fas fa-th-large"></i> Size:
-                                    <span class="float-right">12 feet</span>
+                                    <span class="float-right">{{ service.size }}</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                
+    
                 <!-- Right Content (Description) -->
                 <div class="col-md-4">
                     <div class="card p-3 shadow-sm">
-                        <h4 class="text-center">Why Choose Us?</h4>
-                        <ul class="list-unstyled">
-                            <li>&#10004; Great Customer Service</li>
-                            <li>&#10004; Free Design up to 3 times change</li>
-                            <li>&#10004; Fast Turn Around Time</li>
-                        </ul>
-                        <p>
-                            Ideal for celebrating events like birthdays, weddings, anniversaries, christenings, retirement, graduation, and more.
-                            PVC banners provide a great signage solution for indoor and outdoor displays, fully waterproof and durable.
-                        </p>
-                        <p>
-                            <strong>Usage:</strong> Promoting sales, product launches, grand openings.<br>
-                            <strong>Features:</strong>
-                            <ul>
-                                <li>Full-color printing on premium grade, industrial 440gsm PVC fabric</li>
-                                <li>100% waterproof and UV resistant</li>
-                                <li>High-quality eyelets option for easy hanging</li>
-                            </ul>
-                        </p>
-                        <p class="text-center">
-                            <strong>Contact us for a quote if you need a specific size!</strong>
-                        </p>
+                        
+                        <p>{{ service.description | safe}}</p>
                         <a href="#" class="btn btn-primary w-100">Get a Free Quote</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
     
     <!-- /Starter Section Section -->
 {% endblock %}

@@ -1,8 +1,9 @@
 from django.shortcuts import render
+from services.models import Service  # Make sure to import the Service model
 
-# Create your views here.
 def index(request):
-    return render(request, 'pages/index.html')
+    services = Service.objects.all()  # Query all services
+    return render(request, 'pages/index.html', {'services': services})
 
 def about(request):
     return render(request, 'pages/about.html')
