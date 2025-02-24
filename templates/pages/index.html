@@ -583,37 +583,51 @@ Specializing in digital printing and signage, we offer a wide range of products,
 
         </div>
 
-        <div class="col-lg-8">
-          <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade" data-aos-delay="100">
-            <div class="row gy-4">
+        <!-- Contact Form -->
+      <div class="col-lg-8">
+        <form action="{% url 'contact' %}" method="post" class="" style="padding: 0 30px" data-aos="fade" data-aos-delay="100">
+          {% csrf_token %}
+          <div class="row gy-4">
 
-              <div class="col-md-6">
-                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-              </div>
-
-              <div class="col-md-6 ">
-                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-              </div>
-
-              <div class="col-md-12">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-              </div>
-
-              <div class="col-md-12">
-                <textarea class="form-control" name="message" rows="8" placeholder="Message" required=""></textarea>
-              </div>
-
-              <div class="col-md-12 text-center">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                <button type="submit">Send Message</button>
-              </div>
-
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
             </div>
-          </form>
-        </div><!-- End Contact Form -->
+
+            <div class="col-md-6">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-6">
+              <input type="text" class="form-control" name="phone" placeholder="Your Phone" required="">
+            </div>
+
+            <div class="col-md-6">
+              <select name="category" class="form-control" required>
+                <option value="" disabled selected>Please select Service</option>
+                <option value="signage">Signage</option>
+                <option value="display_signs">Display Signs</option>
+                <option value="digital_printing">Digital Printing</option>
+                <option value="vehicle_signs">Vehicle Signs</option>
+              </select>
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="description" rows="8" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <button type="submit" style="color:#fff; background:#008374; border:0; padding:10px 30px; transition:0.4s;border-radius:50px">Send Message</button>
+            </div>
+
+          </div>
+        </form>
+      </div><!-- End Contact Form -->
+        
+</div><!-- End Contact Form -->
 
       </div>
 

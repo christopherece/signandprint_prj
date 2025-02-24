@@ -12,8 +12,8 @@ def index(request):
     return render(request, 'services/services.html', context)
 
 # View for individual service details
-def service(request, service_id):
-    service = get_object_or_404(Service, id=service_id)
-    return render(request, 'services/service.html', {'service': service})
+def item_detail(request, item_id):
+    item = get_object_or_404(Item, id=item_id)
+    return render(request, 'services/item_detail.html', {'item': item})
 
 

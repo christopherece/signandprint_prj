@@ -36,74 +36,27 @@
         <p>Talk to us today to bring your signage ideas to life!</p>
       </div><!-- End Section Title -->
 
+      <!-- Dynamic Services and Items -->
       <div class="container" data-aos="fade-up">
         <div class="row">
-          <div class="col-md-3 mb-4">
-            <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="{% static 'img/sign1.jpg' %}" class="card-img-top" alt="Custom Sign 1">
-              <div class="card-body">
-                <h5 class="card-title">Signage</h5>
-                  <ul class="card-list">
-                    <li><a href="{% url 'service' service_id=1 %}">ACM Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">PVC Foamboard Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Corflute Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Vinyl Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Wayfinding Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">3D Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Illuminated Signs</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Window Frosting Signage</a></li>
-                  </ul>
-              </div>
+            {% for service in services %}
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="{{ service.image.url }}" class="card-img-top" alt="{{ service.name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ service.get_name_display }}</h5>
+                        <ul class="card-list">
+                            {% for item in service.items.all %}
+                                <li><a href="{% url 'item_detail' item.id %}">{{ item.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="{% static 'img/sign2.jpg' %}" class="card-img-top" alt="Custom Sign 1">
-              <div class="card-body">
-                <h5 class="card-title">Display Signs</h5>
-                  <ul class="card-list">
-                    <li><a href="{% url 'service' service_id=1 %}">PVC Banner</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Roll Up Banner</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Footpath Sign</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">A-Frame</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Custom Flags</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Mexh Banner</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Pop Up Gazebo/Marquues</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="{% static 'img/sign3.jpg' %}" class="card-img-top" alt="Custom Sign 1">
-              <div class="card-body">
-                <h5 class="card-title">Digital Printing</h5>
-                  <ul class="card-list">
-                    <li><a href="{% url 'service' service_id=1 %}">Business Card</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Roll Up Banner</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Flyer</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Brochure</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Custom Stickers / Labels</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-4">
-            <div class="card h-100"> <!-- Added h-100 class -->
-              <img src="{% static 'img/sign4.jpg' %}" class="card-img-top" alt="Custom Sign 1">
-              <div class="card-body">
-                <h5 class="card-title">Vehicle Signs</h5>
-                  <ul class="card-list">
-                    <li><a href="{% url 'service' service_id=1 %}">Car Magnets</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Car Signage</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Oneway Graphic</a></li>
-                    <li><a href="{% url 'service' service_id=1 %}">Truck Signage</a></li>
-                  </ul>
-              </div>
-            </div>
-          </div>
+            {% endfor %}
         </div>
       </div>
+
 
     </section><!-- /Starter Section Section -->
 {% endblock %}
