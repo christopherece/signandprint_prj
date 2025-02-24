@@ -1,9 +1,15 @@
 from django.shortcuts import render
-from services.models import Service  # Make sure to import the Service model
+from services.models import Service, Item  # Make sure to import the Service model
 
 def index(request):
-    services = Service.objects.all()  # Query all services
-    return render(request, 'pages/index.html', {'services': services})
+    services = Service.objects.all()
+    items = Item.objects.all()
+    context = {
+        'services': services,
+        'items': items,
+    }
+    return render(request, 'pages/index.html', context)
+
 
 def about(request):
     return render(request, 'pages/about.html')
