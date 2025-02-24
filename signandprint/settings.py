@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['signhub.topitsolutions.co.nz','192.168.10.250','localhost','19
 # Application definition
 
 INSTALLED_APPS = [
+    'contacts.apps.ContactsConfig',
     'services.apps.ServicesConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
