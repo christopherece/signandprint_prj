@@ -10,3 +10,4 @@ def index(request):
 def service(request, service_id):
     service = get_object_or_404(Service, id=service_id)
     return render(request, 'services/service.html', {'service': service})
+
