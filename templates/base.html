@@ -42,7 +42,13 @@
 {% include 'partials/_navbar.html' %}
 
   <main class="main">
-
+    {% for image in item.gallery.all %}
+    <div class="col-4 col-md-2 mb-2">
+      <a href="{{ item.image.url }}" data-lightbox="service-images">
+        <img src="{{ item.image.url }}" alt="" class="img-fluid rounded">
+      </a>
+    </div>
+    {% endfor %}
     {% block content %}
 
     {% endblock %}
@@ -82,5 +88,6 @@
 
 
 </body>
+
 
 </html>

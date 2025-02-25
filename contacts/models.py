@@ -10,5 +10,10 @@ class Contact(models.Model):
     message = models.TextField(blank=True)
     contact_date = models.DateTimeField(default=datetime.now, blank=True)
     # user_id = models.IntegerField(blank=True)
+
+    class Meta:
+        verbose_name = "Inquiry"
+        verbose_name_plural = "Inquiries"
+
     def __str__(self):
         return self.name

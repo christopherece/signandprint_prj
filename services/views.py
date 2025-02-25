@@ -16,4 +16,11 @@ def item_detail(request, item_id):
     item = get_object_or_404(Item, id=item_id)
     return render(request, 'services/item_detail.html', {'item': item})
 
-
+def service_view(request, service_id):
+    service = Service.objects.filter(id=service_id).first()
+    items = Item.objects.filter(service=service)
+    context = {
+        'service': service,
+        'items': items,
+    }
+    return render(request, 'services/signage.html', context)
