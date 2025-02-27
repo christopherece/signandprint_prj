@@ -21,5 +21,9 @@ class Contact(models.Model):
         )
     description = models.TextField()
 
+    class Meta:
+          verbose_name = "General Inquiry"
+          verbose_name_plural = "General Inquiries"
+
     def __str__(self):
             return self.name

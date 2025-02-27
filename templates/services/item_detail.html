@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row d-flex justify-content-center text-center">
         <div class="col-lg-8">
-          <h1>Signage</h1>
+          <h1>{{ item.name | upper }}</h1>
           <p class="mb-0">
             Bring your workplace vision to life with custom signage that reflects your brand identity. We design, manufacture, and install interior and exterior signs, helping your business stand out. From small decals to large billboards, we offer tailored solutions for individuals, retail, and corporate clients. Our full-service approach ensures high-quality results with exceptional customer service, flexibility, competitive pricing, and fast turnaround times.
           </p>
@@ -19,8 +19,8 @@
   <nav class="breadcrumbs">
     <div class="container">
       <ol>
-        <li><a href="index.html">Home</a></li>
-        <li class="current">Item</li>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li class="current">{{item.name}}</li>
       </ol>
     </div>
   </nav>
