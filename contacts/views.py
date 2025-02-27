@@ -4,13 +4,12 @@ from .models import Contact
 
 def inquiry(request):
     if request.method == 'POST':
-        item_id = request.POST['item_id']
-        item = request.POST['item']
-        name = request.POST['name']
-        email = request.POST['email']
-        phone = request.POST['phone']
-        message = request.POST['message']
-        # user_id = request.POST['user_id']
+        item = request.POST.get('item')
+        item_id = request.POST.get('item_id')  # <-- Safe access
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
 
         contact = Contact(item=item, item_id=item_id, name=name, email=email, phone=phone, message=message)
         contact.save()

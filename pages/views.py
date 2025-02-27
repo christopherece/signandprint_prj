@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from services.models import Service, Item  # Make sure to import the Service model
 from .forms import ContactForm
 from django.contrib import messages
+from django.http import JsonResponse
 
-
+from django.http import HttpResponseRedirect
+from .models import Contact
 
 def index(request):
     services = Service.objects.all()
@@ -14,14 +16,15 @@ def index(request):
     }
     return render(request, 'pages/index.html', context)
 
+def load_items(request):
+    service_id = request.GET.get('service_id')
+    items = Item.objects.filter(service_id=service_id).values('id', 'name')  # Fetch only necessary fields
+    return JsonResponse(list(items), safe=False)
 
 def about(request):
     return render(request, 'pages/about.html')
 
-from django.shortcuts import render
-from django.contrib import messages
-from django.http import HttpResponseRedirect
-from .models import Contact
+
 
 def contact(request):
     if request.method == 'POST':

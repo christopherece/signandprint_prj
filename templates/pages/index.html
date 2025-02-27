@@ -579,7 +579,7 @@ Specializing in digital printing and signage, we offer a wide range of products,
 
         <!-- Contact Form -->
       <div class="col-lg-8">
-        <form action="{% url 'contact' %}" method="post" class="" style="padding: 0 30px" data-aos="fade" data-aos-delay="100">
+        <form action="{% url 'inquiry' %}" method="post" class="" style="padding: 0 30px" data-aos="fade" data-aos-delay="100">
           {% csrf_token %}
           <div class="row gy-4">
 
@@ -596,21 +596,24 @@ Specializing in digital printing and signage, we offer a wide range of products,
             </div>
 
             <div class="col-md-6">
-              <select name="category" class="form-control" required>
-                <option value="" disabled selected>Please select Service</option>
-                <option value="signage">Signage</option>
-                <option value="display_signs">Display Signs</option>
-                <option value="digital_printing">Digital Printing</option>
-                <option value="vehicle_signs">Vehicle Signs</option>
+              <select id="service" name="service" class="form-control" required placeholder="Select a Service">
+                <option value="" disabled selected>Please select a service</option>
+                {% for service in services %}
+                  <option value="{{ service.id }}">{{ service.get_name_display }}</option>
+                {% endfor %}
               </select>
             </div>
-
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            
+            <div class="col-md-6">
+              <select id="item" name="item" class="form-control" required placeholder="Select an Item">
+                <option value="" disabled selected>Please select an Item</option>
+              </select>
             </div>
+            
+            <input type="hidden" id="item_id" name="item_id" value="">
 
             <div class="col-md-12">
-              <textarea class="form-control" name="description" rows="8" placeholder="Message" required=""></textarea>
+              <textarea class="form-control" name="message" rows="8" placeholder="Message" required=""></textarea>
             </div>
 
             <div class="col-md-12 text-center">
@@ -628,6 +631,8 @@ Specializing in digital printing and signage, we offer a wide range of products,
     </div>
 
   </section><!-- /Contact Section -->
+
+
 
 {% endblock %}
 

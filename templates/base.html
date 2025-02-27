@@ -67,6 +67,7 @@
   {% comment %} <div id="preloader"></div> {% endcomment %}
 
   <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'vendor/php-email-form/validate.js' %}"></script>
   <script src="{% static 'vendor/aos/aos.js' %}"></script>
@@ -83,6 +84,35 @@
         document.querySelector('.alert').remove();
     }, 3000);
   </script>
+
+<script>
+  $(document).ready(function() {
+      $("#service").change(function() {
+          var serviceId = $(this).val();
+          if (serviceId) {
+              $.ajax({
+                  url: "{% url 'load_items' %}",
+                  data: {'service_id': serviceId},
+                  success: function(data) {
+                      var itemDropdown = $("#item");
+                      itemDropdown.empty();
+                      itemDropdown.append('<option value="" disabled selected>Please select an item</option>');
+                      $.each(data, function(index, item) {
+                          itemDropdown.append('<option value="' + item.id + '" data-name="' + item.name + '">' + item.name + '</option>');
+                      });
+                  }
+              });
+          }
+      });
+
+      // When an item is selected, set the value of the hidden input field with the item ID
+      $("#item").change(function() {
+          var selectedItemId = $(this).val(); // Get selected item's ID
+          $("#item_id").val(selectedItemId); // Set the hidden input field with the item ID
+      });
+  });
+</script>
+
 
 
 
