@@ -18,7 +18,7 @@ def inquiry(request):
         #send Mail
         send_mail(
             'Item Inquiry',
-            'There is an inquiry for  ' + item + '. Sign into admin panel for more info!',
+            'There is an inquiry. Sign into admin panel for more info!',
             'noreply.signhub@gmail.com',
             [email,'christopheranchetaece@gmail.com'],
             fail_silently=False
