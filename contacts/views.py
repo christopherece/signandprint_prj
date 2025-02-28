@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages  # <-- Import this
 from .models import Contact
+from django.core.mail import send_mail
 
 def inquiry(request):
     if request.method == 'POST':
@@ -14,6 +15,15 @@ def inquiry(request):
         contact = Contact(item=item, item_id=item_id, name=name, email=email, phone=phone, message=message)
         contact.save()
         
+        #send Mail
+        send_mail(
+            'Item Inquiry',
+            'There is an inquiry for  ' + item + '. Sign into admin panel for more info!',
+            'noreply.signhub@gmail.com',
+            [email,'christopheranchetaece@gmail.com'],
+            fail_silently=False
+        )
+
         messages.success(request, 'Your request has been submitted and we will get back to you soon')  # <-- Fixed 'messages'
         return redirect(f'/services/item/{item_id}')
     else:
