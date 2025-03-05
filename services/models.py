@@ -3,17 +3,8 @@ from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Service(models.Model):
-    DISPLAY_TYPE_CHOICES = [
-            ('signage', 'Signage'),
-            ('display_signs', 'Display Signs'),
-            ('digital_printing', 'Digital Printing'),
-            ('vehicle_signs', 'Vehicle Signs'),
-
-        ]
     name = models.CharField(
         max_length=150,
-        choices=DISPLAY_TYPE_CHOICES,  # Assign choices here
-        default='signage',  # Default value, you can choose another if preferred
     )
     description = RichTextField(blank=True)
     image = models.ImageField(upload_to='services/')

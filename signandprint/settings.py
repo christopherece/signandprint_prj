@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-t-34%ve&hv@z_(7-ozd2lnn-mdyv__z^xx(sn-!nbhhsj7rn*z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['signhub.topitsolutions.co.nz','192.168.10.250','localhost','192.168.10.88']
+ALLOWED_HOSTS = ['signhub.topitsolutions.co.nz','10.1.1.36','localhost','192.168.10.36','signhub.co.nz']
 CSRF_TRUSTED_ORIGINS = [
-    'https://signhub.topitsolutions.co.nz','http://signhub.topitsolutions.co.nz']
+    'https://signhub.topitsolutions.co.nz','http://signhub.topitsolutions.co.nz','https://signhub.co.nz','http://signhub.co.nz']
 
 INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
