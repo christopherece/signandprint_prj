@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-t-34%ve&hv@z_(7-ozd2lnn-mdyv__z^xx(sn-!nbhhsj7rn*z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['signhub.topitsolutions.co.nz','10.1.1.36','localhost','192.168.10.36','signhub.co.nz']
+ALLOWED_HOSTS = ['signhub.topitsolutions.co.nz','10.1.1.36','localhost','192.168.10.250','signhub.co.nz']
 CSRF_TRUSTED_ORIGINS = [
     'https://signhub.topitsolutions.co.nz','http://signhub.topitsolutions.co.nz','https://signhub.co.nz','http://signhub.co.nz']
 
@@ -79,10 +79,18 @@ WSGI_APPLICATION = 'signandprint.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default1': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+    'default':{
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'signhub_db',
+        'USER': 'postgres',
+        'PASSWORD': '!pass1234%',
+        'HOST': 'localhost'
     }
+
 }
 
 
@@ -150,3 +158,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'noreply.singhub@gmail.com'
 EMAIL_HOST_PASSWORD = 'rzrxiflerdlxczlb'
 EMAIL_USE_TLS = True
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
