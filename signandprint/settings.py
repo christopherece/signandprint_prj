@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'signandprint.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default1': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     },
-    'default':{
+    'default1':{
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'signhub_db',
         'USER': 'postgres',
