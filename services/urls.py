@@ -8,6 +8,7 @@ urlpatterns = [
     path('service/display_signs/', views.service_view, {'service_id': 2}, name='display_signs'),
     path('service/digital_printing/', views.service_view, {'service_id': 3}, name='digital_printing'),
     path('service/vehicle_signs/', views.service_view, {'service_id': 4}, name='vehicle_signs'),
+    path('service/<int:service_id>/', views.service_view, name='service_detail'),
 
 
 ]

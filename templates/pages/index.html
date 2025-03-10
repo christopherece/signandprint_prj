@@ -597,7 +597,7 @@ Specializing in digital printing and signage, we offer a wide range of products,
               <select id="service" name="service" class="form-control" required placeholder="Select a Service">
                 <option value="" disabled selected>Please select a service</option>
                 {% for service in services %}
-                  <option value="{{ service.id }}">{{ service.get_name_display }}</option>
+                  <option value="{{ service.id }}">{{ service.name }}</option>
                 {% endfor %}
               </select>
             </div>
